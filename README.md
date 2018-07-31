@@ -1,1 +1,1 @@
-﻿
+﻿A .Net wrapper for the ShipX Inpost web API as described on [inpost24.com](http://docs.inpost24.com).

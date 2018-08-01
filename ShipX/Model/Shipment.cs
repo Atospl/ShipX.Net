@@ -12,6 +12,16 @@ namespace ShipX.Net.Model
     public class Shipment
     {
         public string id { get; set; }
+        public string status { get; set; }
+
+
+
+        public string reference { get; set; }
+        public string offer_id { get; set; }
+
+
+        public bool only_choice_of_offer { get; set; }
+        
 
         /// <summary>
         /// <para></para>Miejsce powstania kosztów<para>
@@ -82,10 +92,14 @@ namespace ShipX.Net.Model
         public string[] additional_services { get; set; }
 
 
+        public Offer[] offers { get; set; }
+
+
         public override string ToString()
         {
             return base.ToString();
         }
+
 
         public string ToJson()
         {

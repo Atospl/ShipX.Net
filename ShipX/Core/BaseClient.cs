@@ -49,13 +49,26 @@ namespace ShipX.Net.Core
             return request;
         }
 
-        protected RestRequest createBuyShipmentRequest(string id)
+        /// <summary>
+        /// offer_id 
+        /// </summary>
+        /// <param name="offer_id"></param>
+        /// <returns></returns>
+        protected RestRequest createBuyShipmentRequest(string shipment_id, string offer_id)
         {
-            RestRequest request = new RestRequest($"/v1/shipments/{id}/buy", Method.POST);
-            request.AddParameter("application/json", "{ \"offer_id\": \"VAR\" }".Replace("VAR", id), ParameterType.RequestBody);
+            RestRequest request = new RestRequest($"/v1/shipments/{shipment_id}/buy", Method.POST);
+            request.AddParameter("application/json", "{ \"offer_id\" : \"VARIABLE_ID\" }".Replace("VARIABLE_ID", offer_id), ParameterType.RequestBody);
             return request;
         }
 
+
+        protected RestRequest createSelectOfferRequest(string shipment_id, string offer_id)
+        {
+            RestRequest request = new RestRequest($"/v1/shipments/{shipment_id}/select_offer", Method.POST);
+            request.AddParameter("application/json", "{ \"offer_id\" : \"VARIABLE_ID\" }".Replace("VARIABLE_ID", offer_id), ParameterType.RequestBody);
+            return request;
+        }
+        
         protected RestRequest createDownloadShipmentLabel(string id, LabelFormatEnum format, LabelTypeEnum type)
         {
             RestRequest request = new RestRequest($"/v1/shipments/{id}/label?format={format.ToString()}&type={type.ToString()}", Method.GET);

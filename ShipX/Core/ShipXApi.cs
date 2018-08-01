@@ -35,26 +35,30 @@ namespace ShipX.Net.Core
             return new Result<Shipment>(response);
         }
 
-        public async Task<Result<Shipment>> BuyShipmentAsync(string id)
+        public async Task<Result<Shipment>> BuyShipmentAsync(string shipment_id, string offer_id)
         {
-            RestRequest request = createBuyShipmentRequest(id);
+            RestRequest request = createBuyShipmentRequest(shipment_id, offer_id);
             IRestResponse response = await RestClient.ExecuteTaskAsync(request);
             return new Result<Shipment>(response);
-
         }
+
+        public async Task<Result<Shipment>> SelectOfferAsync(string shipment_id, string offer_id)
+        {
+            RestRequest request = createSelectOfferRequest(shipment_id, offer_id);
+            IRestResponse response = await RestClient.ExecuteTaskAsync(request);
+            return new Result<Shipment>(response);
+        }
+
+
 
         public async Task<Result<LabelData>> DownloadShipmentLabelAsync(string shipmentId, LabelFormatEnum format = LabelFormatEnum.Pdf, LabelTypeEnum type = LabelTypeEnum.normal)
         {
             RestRequest request = createDownloadShipmentLabel(shipmentId, format, type);
-
-            //to test 
-            //IRestResponse response = await RestClient.DownloadData(request);
             
             IRestResponse response = await RestClient.ExecuteTaskAsync(request);
 
             byte[] response2 = RestClient.DownloadData(request);
-
-
+            
             File.WriteAllBytes(@"C:\\test.pdf", response2);
 
             return new Result<LabelData>(response);

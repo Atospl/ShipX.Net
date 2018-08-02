@@ -11,28 +11,21 @@ namespace ShipX.Net.Model
 {
     public class CustomAttributes
     {
-
-        
         [JsonConverter(typeof(ArrayToPropertyConventer))]
         public string[] target_point { get; set; }
-
-
-        
-
-        
-
-
 
         /// <summary>
         /// Lista sposobów nadania
         /// SendingMethodEnum
         /// </summary>
+
+        [JsonConverter(typeof(ArrayToPropertyConventer))]
         public string[] sending_method { get; set; }
+
+
+        [JsonConverter(typeof(ArrayToPropertyConventer))]
         public string[] dropoff_point { get; set; }
 
-
-
-
-
+        
     }
 }

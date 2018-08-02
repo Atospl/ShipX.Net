@@ -69,6 +69,7 @@
     <Compile Include="Model\Error.cs" />
     <Compile Include="Model\Insurance.cs" />
     <Compile Include="Model\LabelData.cs" />
+    <Compile Include="Model\Offer.cs" />
     <Compile Include="Model\Parcel.cs" />
     <Compile Include="Model\Receiver.cs" />
     <Compile Include="Model\Shipment.cs" />

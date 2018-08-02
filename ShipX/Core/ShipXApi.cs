@@ -42,15 +42,20 @@ namespace ShipX.Net.Core
             return new Result<Shipment>(response);
         }
 
+        public async Task<Result<Shipment>> GetShipmentInfoAsync(string id)
+        {
+            RestRequest request = createGetShipmentInfo(id);
+            IRestResponse response = await RestClient.ExecuteTaskAsync(request);
+            return new Result<Shipment>(response);
+        }
+        
         public async Task<Result<Shipment>> SelectOfferAsync(string shipment_id, string offer_id)
         {
             RestRequest request = createSelectOfferRequest(shipment_id, offer_id);
             IRestResponse response = await RestClient.ExecuteTaskAsync(request);
             return new Result<Shipment>(response);
         }
-
-
-
+        
         public async Task<Result<LabelData>> DownloadShipmentLabelAsync(string shipmentId, LabelFormatEnum format = LabelFormatEnum.Pdf, LabelTypeEnum type = LabelTypeEnum.normal)
         {
             RestRequest request = createDownloadShipmentLabel(shipmentId, format, type);

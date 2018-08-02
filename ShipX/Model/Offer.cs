@@ -8,7 +8,13 @@ namespace ShipX.Net.Model
 {
     public class Offer
     {
-        public int id { get; set; }
-
+        public string id { get; set; }
+        public string status { get; set; }
+        public string currency { get; set; }
+        public string rate { get; set; }
+        public string expires_at { get; set; }
+        public Service service { get; set; }
+        public Carrier carrier { get; set; }
+        //public AdditionalServices additional_services { get; set; }
     }
 }

@@ -62,6 +62,7 @@
     <Compile Include="Enum\UnitEnum.cs" />
     <Compile Include="Model\AdditionalServices.cs" />
     <Compile Include="Model\Address.cs" />
+    <Compile Include="Model\Carrier.cs" />
     <Compile Include="Model\Cod.cs" />
     <Compile Include="Model\CustomAttributes.cs" />
     <Compile Include="Model\Details.cs" />
@@ -72,6 +73,7 @@
     <Compile Include="Model\Offer.cs" />
     <Compile Include="Model\Parcel.cs" />
     <Compile Include="Model\Receiver.cs" />
+    <Compile Include="Model\Service.cs" />
     <Compile Include="Model\Shipment.cs" />
     <Compile Include="Model\Weight.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

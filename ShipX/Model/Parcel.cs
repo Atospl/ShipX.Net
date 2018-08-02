@@ -10,9 +10,9 @@ namespace ShipX.Net.Model
     {
         public string id { get; set; }
         public string template { get; set; }
+        public string tracking_number { get; set; }
+        public bool is_non_standard { get; set; }
         public Dimensions dimensions { get; set; }
         public Weight weight { get; set; }
-        public object tracking_number { get; set; }
-        public bool is_non_standard { get; set; }
     }
 }

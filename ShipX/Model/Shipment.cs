@@ -13,13 +13,8 @@ namespace ShipX.Net.Model
     {
         public string id { get; set; }
         public string status { get; set; }
-
-
-
         public string reference { get; set; }
         public string offer_id { get; set; }
-
-
         public bool only_choice_of_offer { get; set; }
         
 
@@ -94,7 +89,17 @@ namespace ShipX.Net.Model
 
 
         public Offer[] offers { get; set; }
-        public string selected_offer { get; set; }
+
+
+
+
+
+        /// <summary>
+        /// Usługa, która została wybrana podczas kupowania etykiety dla przesyłki.
+        /// </summary>
+        public Offer selected_offer { get; set; }
+
+
 
 
 

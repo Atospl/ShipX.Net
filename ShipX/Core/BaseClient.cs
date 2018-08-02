@@ -74,5 +74,12 @@ namespace ShipX.Net.Core
             RestRequest request = new RestRequest($"/v1/shipments/{id}/label?format={format.ToString()}&type={type.ToString()}", Method.GET);
             return request;
         }
+
+        protected RestRequest createGetShipmentInfo(string id)
+        {
+            RestRequest request = new RestRequest($"/v1/shipments/{id}", Method.GET);
+            return request;
+        }
+        
     }
 }

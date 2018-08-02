@@ -23,7 +23,6 @@ namespace ShipX.Net.Converters
 
             }
 
-
             return new string[] { Convert.ToString(reader.Value) };
         }
 

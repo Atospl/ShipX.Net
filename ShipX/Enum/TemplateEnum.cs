@@ -9,6 +9,8 @@ namespace ShipX.Net.Enum
     public enum TemplateEnum
     {
         small = 2,
-        large = 4
+        medium = 4,
+        large = 8
+        
     }
 }

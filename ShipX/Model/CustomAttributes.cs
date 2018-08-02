@@ -21,10 +21,16 @@ namespace ShipX.Net.Model
 
         [JsonConverter(typeof(ArrayToPropertyConventer))]
         public string[] sending_method { get; set; }
-
-
+        
         [JsonConverter(typeof(ArrayToPropertyConventer))]
         public string[] dropoff_point { get; set; }
+
+        
+        [JsonConverter(typeof(ArrayToPropertyConventer))]
+        public string[] allegro_transaction_id { get; set; }
+
+        [JsonConverter(typeof(ArrayToPropertyConventer))]
+        public string[] allegro_user_id { get; set; }
 
         
     }

@@ -92,7 +92,10 @@ namespace ShipX.Net.Model
         public string[] additional_services { get; set; }
 
 
+
         public Offer[] offers { get; set; }
+        public string selected_offer { get; set; }
+
 
 
         public override string ToString()

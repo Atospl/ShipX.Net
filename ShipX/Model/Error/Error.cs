@@ -4,14 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ShipX.Net.Model
+namespace ShipX.Net.Model.Error
 {
     public class Error
     {
         public int status { get; set; }
         public string error { get; set; }
         public string message { get; set; }
-        public Details details { get; set; }
-
+        public ShipX.Net.Model.Error.Details details { get; set; }
     }
 }

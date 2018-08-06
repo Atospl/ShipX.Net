@@ -66,9 +66,13 @@
     <Compile Include="Model\Carrier.cs" />
     <Compile Include="Model\Cod.cs" />
     <Compile Include="Model\CustomAttributes.cs" />
-    <Compile Include="Model\Details.cs" />
+    <Compile Include="Model\Error\AdditionalServices.cs" />
+    <Compile Include="Model\Error\Address.cs" />
+    <Compile Include="Model\Error\CustomAttributes.cs" />
+    <Compile Include="Model\Error\Details.cs" />
     <Compile Include="Model\Dimensions.cs" />
-    <Compile Include="Model\Error.cs" />
+    <Compile Include="Model\Error\Error.cs" />
+    <Compile Include="Model\Error\Receiver.cs" />
     <Compile Include="Model\Insurance.cs" />
     <Compile Include="Model\LabelData.cs" />
     <Compile Include="Model\Offer.cs" />
@@ -79,9 +83,7 @@
     <Compile Include="Model\Weight.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Model\Error\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>

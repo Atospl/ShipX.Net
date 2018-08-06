@@ -42,6 +42,17 @@ namespace ShipX.Net.Core
 
 
 
+
+
+
+
+
+
+
+
+
+
+
         public async Task<Result<Shipment>> BuyShipmentAsync(string shipment_id, string offer_id)
         {
             RestRequest request = createBuyShipmentRequest(shipment_id, offer_id);

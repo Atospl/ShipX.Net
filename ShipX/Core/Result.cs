@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using RestSharp;
 using ShipX.Net.Model;
+using ShipX.Net.Model.Error;
 using System;
 using System.Collections.Generic;
 using System.Linq;

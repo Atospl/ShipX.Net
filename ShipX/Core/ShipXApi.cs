@@ -20,12 +20,12 @@ namespace ShipX.Net.Core
         {
 
         }
-
-        public Shipment CreateShipmentV2(Shipment shipment)
+        
+        public Result<Shipment> CreateShipment(Shipment shipment)
         {
             RestRequest request = createShipmentRequest(shipment);
             IRestResponse response = RestClient.Execute(request);
-            return shipment;
+            return new Result<Shipment>(response);
         }
         
         public async Task<Result<Shipment>> CreateShipmentAsync(Shipment shipment)
@@ -34,6 +34,13 @@ namespace ShipX.Net.Core
             IRestResponse response = await RestClient.ExecuteTaskAsync(request);
             return new Result<Shipment>(response);
         }
+
+
+        
+
+
+
+
 
         public async Task<Result<Shipment>> BuyShipmentAsync(string shipment_id, string offer_id)
         {

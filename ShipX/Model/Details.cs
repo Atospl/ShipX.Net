@@ -10,8 +10,7 @@ namespace ShipX.Net.Model
     {
         public string[] offer_id { get; set; }
         public string[] parcels { get; set; }
-        public string[] receiver { get; set; }
-
+        public Receiver receiver { get; set; }
         public AdditionalServices[] additional_services { get; set; }
         public CustomAttributes[] custom_attributes { get; set; }
         

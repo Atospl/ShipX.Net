@@ -10,14 +10,14 @@ using System.Threading.Tasks;
 
 namespace ShipX.Net.Core
 {
-    public class Result<T>
+    public class ApiResult<T>
     {
         public T Data { get; private set; }
         public Error Error { get; private set; }
         public bool Success { get; private set; }
         public IRestResponse Response { get; private set; }
 
-        public Result(IRestResponse response)
+        public ApiResult(IRestResponse response)
         {
             if (response == null)
             {

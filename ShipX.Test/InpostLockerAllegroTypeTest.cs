@@ -39,7 +39,7 @@ namespace ShipX.Test
             
 
 
-            Result<Shipment> result = client.CreateShipment(tstShipment);
+            ApiResult<Shipment> result = client.CreateShipment(tstShipment);
 
             Assert.IsNotNull(result);
             Assert.IsNotNull(result.Error);
@@ -68,7 +68,7 @@ namespace ShipX.Test
                 .RuleFor(f => f.receiver, tstReciver)
                 .RuleFor(f => f.custom_attributes, tstCustomAtrr);
 
-            Result<Shipment> result = client.CreateShipment(tstShipment);
+            ApiResult<Shipment> result = client.CreateShipment(tstShipment);
             Assert.IsNotNull(result);
             Assert.IsNotNull(result.Error);
             Assert.AreNotEqual(0, result.Error.details.receiver[0].phone.Count);

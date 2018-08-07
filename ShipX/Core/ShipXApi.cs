@@ -27,7 +27,30 @@ namespace ShipX.Net.Core
             IRestResponse response = RestClient.Execute(request);
             return new Result<Shipment>(response);
         }
-        
+
+        public Result<Shipment> GetShipmentInfo(string id)
+        {
+            RestRequest request = createGetShipmentInfo(id);
+            IRestResponse response = RestClient.Execute(request);
+            return new Result<Shipment>(response);
+        }
+
+        public byte[] DownloadShipmentLabel(string shipmentId, LabelFormatEnum format = LabelFormatEnum.Pdf, LabelTypeEnum type = LabelTypeEnum.normal)
+        {
+            RestRequest request = createDownloadShipmentLabel(shipmentId, format, type);
+            return RestClient.DownloadData(request);
+        }
+
+
+
+
+
+
+
+
+
+
+        #region async
         public async Task<Result<Shipment>> CreateShipmentAsync(Shipment shipment)
         {
             RestRequest request = createShipmentRequest(shipment);
@@ -35,8 +58,17 @@ namespace ShipX.Net.Core
             return new Result<Shipment>(response);
         }
 
+        public async Task<Result<Shipment>> GetShipmentInfoAsync(string id)
+        {
+            RestRequest request = createGetShipmentInfo(id);
+            IRestResponse response = await RestClient.ExecuteTaskAsync(request);
+            return new Result<Shipment>(response);
+        }
+        #endregion
 
-        
+
+
+
 
 
 
@@ -56,13 +88,6 @@ namespace ShipX.Net.Core
         public async Task<Result<Shipment>> BuyShipmentAsync(string shipment_id, string offer_id)
         {
             RestRequest request = createBuyShipmentRequest(shipment_id, offer_id);
-            IRestResponse response = await RestClient.ExecuteTaskAsync(request);
-            return new Result<Shipment>(response);
-        }
-
-        public async Task<Result<Shipment>> GetShipmentInfoAsync(string id)
-        {
-            RestRequest request = createGetShipmentInfo(id);
             IRestResponse response = await RestClient.ExecuteTaskAsync(request);
             return new Result<Shipment>(response);
         }

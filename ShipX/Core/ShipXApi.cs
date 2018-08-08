@@ -35,16 +35,20 @@ namespace ShipX.Net.Core
             return new ApiResult<Shipment>(response);
         }
 
-        public byte[] DownloadShipmentLabelV1(string shipmentId, LabelFormatEnum format = LabelFormatEnum.Pdf, LabelTypeEnum type = LabelTypeEnum.normal)
+        public byte[] DownloadShipmentLabelRaw(string shipmentId, LabelFormatEnum format = LabelFormatEnum.Pdf, LabelTypeEnum type = LabelTypeEnum.normal)
         {
             RestRequest request = createDownloadShipmentLabel(shipmentId, format, type);
             return RestClient.DownloadData(request);
         }
 
-        public byte[] DownloadShipmentLabelV2(string shipmentId, LabelFormatEnum format = LabelFormatEnum.Pdf, LabelTypeEnum type = LabelTypeEnum.normal)
+        public void  DownloadShipmentLabelV2(string shipmentId, LabelFormatEnum format = LabelFormatEnum.Pdf, LabelTypeEnum type = LabelTypeEnum.normal)
         {
             RestRequest request = createDownloadShipmentLabel(shipmentId, format, type);
-            return RestClient.DownloadData(request);
+
+            IRestResponse response = RestClient.Execute(request);
+
+
+
         }
         
         #region async

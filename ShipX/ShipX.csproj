@@ -51,8 +51,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Converters\ArrayToPropertyConventer.cs" />
-    <Compile Include="Core\LabelResul.cs" />
-    <Compile Include="Core\Result.cs" />
+    <Compile Include="Core\IResult.cs" />
+    <Compile Include="Core\LabelResult.cs" />
+    <Compile Include="Core\ApiResult.cs" />
     <Compile Include="Core\ShipXApi.cs" />
     <Compile Include="Core\BaseClient.cs" />
     <Compile Include="Enum\LabelFormatEnum.cs" />

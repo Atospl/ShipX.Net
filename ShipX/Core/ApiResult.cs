@@ -10,14 +10,24 @@ using System.Threading.Tasks;
 
 namespace ShipX.Net.Core
 {
-    public class ApiResult<T>
+    public class ApiResult<T> : IResult
     {
         public T Data { get; private set; }
         public Error Error { get; private set; }
         public bool Success { get; private set; }
         public IRestResponse Response { get; private set; }
+        
+        public ApiResult()
+        {
 
+        }
+        
         public ApiResult(IRestResponse response)
+        {
+             HandleResponse(response);
+        }
+        
+        public void HandleResponse(IRestResponse response)
         {
             if (response == null)
             {
@@ -26,13 +36,9 @@ namespace ShipX.Net.Core
 
             Response = response;
 
-            handleResponse(response);
-        }
-
-        private void handleResponse(IRestResponse response)
-        {
             prepareError(response);
             prepareData(response);
+            
         }
 
         private void prepareError(IRestResponse response)
@@ -73,5 +79,7 @@ namespace ShipX.Net.Core
             }
             
         }
+
+        
     }
 }

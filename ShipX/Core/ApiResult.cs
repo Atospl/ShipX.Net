@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace ShipX.Net.Core
 {
-    public class ApiResult<T> : IResult
+    public class ApiResult<T> : IResult<T>
     {
         public T Data { get; private set; }
         public Error Error { get; private set; }
@@ -36,12 +36,12 @@ namespace ShipX.Net.Core
 
             Response = response;
 
-            prepareError(response);
-            prepareData(response);
+            PrepareError(response);
+            PrepareData(response);
             
         }
 
-        private void prepareError(IRestResponse response)
+        private void PrepareError(IRestResponse response)
         {
             if (response.StatusCode == System.Net.HttpStatusCode.BadRequest || response.StatusCode == System.Net.HttpStatusCode.NotFound)
             {
@@ -63,7 +63,7 @@ namespace ShipX.Net.Core
             }
         }
 
-        private void prepareData(IRestResponse response)
+        private void PrepareData(IRestResponse response)
         {
             if (response.StatusCode == System.Net.HttpStatusCode.Created || response.StatusCode == System.Net.HttpStatusCode.OK)
             {

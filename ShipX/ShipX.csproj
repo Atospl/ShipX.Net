@@ -51,9 +51,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Converters\ArrayToPropertyConventer.cs" />
+    <Compile Include="Converters\StickerConventer.cs" />
     <Compile Include="Core\IResult.cs" />
-    <Compile Include="Core\LabelResult.cs" />
+    <Compile Include="Core\DownloadResult.cs" />
     <Compile Include="Core\ApiResult.cs" />
+    <Compile Include="Core\ResponseBase.cs" />
     <Compile Include="Core\ShipXApi.cs" />
     <Compile Include="Core\BaseClient.cs" />
     <Compile Include="Enum\LabelFormatEnum.cs" />
@@ -76,7 +78,7 @@
     <Compile Include="Model\Error\Error.cs" />
     <Compile Include="Model\Error\Receiver.cs" />
     <Compile Include="Model\Insurance.cs" />
-    <Compile Include="Model\LabelData.cs" />
+    <Compile Include="Model\Sticker.cs" />
     <Compile Include="Model\Offer.cs" />
     <Compile Include="Model\Parcel.cs" />
     <Compile Include="Model\Receiver.cs" />
